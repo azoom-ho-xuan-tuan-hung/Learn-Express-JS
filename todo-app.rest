@@ -1,0 +1,47 @@
+### Auth
+
+POST http://localhost:8386/auth/register
+Content-Type: application/json
+
+{
+  "username": "JohnDoe",
+  "password": "password123"
+}
+
+POST http://localhost:8386/auth/login
+Content-Type: application/json
+
+{
+    "username": "John Doe",
+    "password": "password123"
+}
+
+### Todos
+
+GET http://localhost:8386/todos
+Authorization: Bearer <token>
+
+POST http://localhost:8386/todos
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+    "title": "New Todo",
+    "completed": false
+}
+
+GET http://localhost:8386/todos/1
+Authorization: Bearer <token>
+
+PUT http://localhost:8386/todos/1
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+    "title": "Updated Todo",
+    "completed": true
+}
+
+
+DELETE http://localhost:8386/todos/1
+Authorization: Bearer <token>
